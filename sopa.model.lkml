@@ -9,3 +9,11 @@ datagroup: sopa_default_datagroup {
 }
 
 persist_with: sopa_default_datagroup
+
+explore: sopa_watermeters {
+  label: "SOPA Water Meters"
+  }
+
+explore: sopa_programs {
+  label: "SOPA Irrigation Programs"
+}

@@ -80,9 +80,6 @@ view: sopa_watermeters {
     sql: ${TABLE}.long ;;
   }
 
-
-
-
   dimension: t1 {
     label: "Date and Time"
     type: string
@@ -95,12 +92,12 @@ view: sopa_watermeters {
 
   }
 
-  dimension: time_8am_8am {
-    label: "time 8am - 8am"
-    type:string
-    sql:(trunc_days(${canadab_wm.reading_time}) = add_days(-1,trunc_days(now())) AND extract_hours(${canadab_wm.reading_time}) >= 8)
-      OR (trunc_days(${canadab_wm.reading_time}) = trunc_days(now()) AND extract_hours(${canadab_wm.reading_time}) < 8);;
-  }
+ ## dimension: time_8am_8am {
+  ##  label: "time 8am - 8am"
+    ##type:string
+  ##  sql:(trunc_days(${sopa_watermeters.reading_time}) = add_days(-1,trunc_days(now())) AND extract_hours(${sopa_watermeters}) >= 8)
+    ###  OR (trunc_days(${sopa_wm.reading_time}) = trunc_days(now()) AND extract_hours(${sopa_wm.reading_time}) < 8);;
+  ##}
 
   dimension: v1 {
     hidden: yes

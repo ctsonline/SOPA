@@ -4,7 +4,7 @@ view: sopa_programs {
   dimension: Value{
     label: "Meter Values"
     type: number
-    sql: ${TABLE}.v1 ;;
+    sql: (${TABLE}.v1)<3600 ;;
   }
 
   dimension_group: reading {
@@ -49,10 +49,11 @@ view: sopa_programs {
   }
 
   dimension:  location {
-    label: "Meter Location"
+    label: "Program Location"
     type: string
     sql: split_part(${name}, '.',4 ) ;;
   }
+
 
   dimension:  MWM_decon {
     type: string
@@ -110,7 +111,10 @@ view: sopa_programs {
   #   sql: ${TABLE}.v1 ;;
   # }
 
-
+measure: starttime {
+  type: date_hour
+  sql:  ;;
+}
 
   measure: min_value{
     label: "Min Meter Reading"
